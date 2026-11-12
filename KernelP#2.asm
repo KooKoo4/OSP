@@ -155,13 +155,14 @@ GDT_start: ; Beginning of our GDT
 		; VideoMemory = 0xb8000
 		;first byte = character
 		;Second byte = Color
-		mov al, 72	;character [off for now]
-		mov ah, 0x0a ;white on black(color) [off for now]
-  		mov word [0xb8000], ax ; move ax to the beginning of video memory. [off for now]
-  		mov al, 69
-  		add al, 32
-  		mov ax, 0x0a
-  		mov word [0xb8002], ax
+		;mov esp, 0x90000
+	;	mov al, 72	;character [off for now]
+	;	mov ah, 0x0a ;white on black(color) [off for now]
+  		mov word [0xb8560], 0xa48 ; H 
+  		mov word [0xb8562], 0xa45 ; E
+  		mov word [0xb8564], 0xa4c ; L
+  		mov word [0xb8566], 0xa4c ; L
+  		mov word [0xb8568], 0xa4f ; O
   	
 
 		
